@@ -2,8 +2,8 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import {useRef, useEffect, useState} from 'react'
-import image from 'next/image'
-
+import Image from 'next/image'
+import runner from '../../public/runner.jpeg'
 
 
 export default function Carousel() {
@@ -11,11 +11,17 @@ export default function Carousel() {
  
   return (
     <div>
-      <motion.div className = 'absolute h-1/4 top-1/2'>
-        <motion.div className=' box-content display-flex h-full w-[400px] absolute -left-16 bottom-16'>
+      <motion.div className = 'cursor-pointer h-1/2 top-1/2 mx-60 overflow-x-scroll'>
+        <motion.div className=' box-content flex h-full w-full' drag="x">
           {carouselDivs.map(n  => {
             return(
-            <motion.div className='h-full w-full rounded-xl bg-inherit'>{n}</motion.div>
+            <motion.div key={n} className='min-w-80 rounded-xl bg-slate-400 text-black px-9'>
+              <Image
+                src={runner}
+                alt="Picture of the runner"
+                className='rounded-xl h-full w-full pointer-events-none'
+            />
+            </motion.div>
             );
           })}
         </motion.div>
