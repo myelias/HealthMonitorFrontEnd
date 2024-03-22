@@ -4,7 +4,6 @@ import React from 'react'
 
 export default function LoginButton({isActive, toggleMenu}) {
 return(
-    //100 x 40
     <div className='absolute w-[60px] h-[60px] top-0 right-0 overflow-hidden rounded-2xl cursor-pointer'>
         <motion.div 
             className='relative w-full h-full'

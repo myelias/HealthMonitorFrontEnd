@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Syne } from 'next/font/google'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import NavMenu from '@/components/ui/NavMenu'
@@ -6,7 +7,7 @@ import Cursor from '@/components/ui/Cursor'
 
 
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] , weight:['600']})
 
 export const metadata: Metadata = {
   title: 'Create Next App',

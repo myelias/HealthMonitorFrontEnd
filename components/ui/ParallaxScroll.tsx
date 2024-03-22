@@ -15,7 +15,7 @@ export default function ParallaxScroll() {
         target: ref,
         offset: ["start start", "start end"], 
     });
-    const BackgroundY = useTransform(scrollYProgress, [0,1], ["0%", "70%"]); // was 200%
+    const BackgroundY = useTransform(scrollYProgress, [0,1], ["0%", "20%"]); // was 200%
     const BackgroundY2 = useTransform(scrollYProgress, [0,1], ["0%", "100%"]);
   
     return (

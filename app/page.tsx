@@ -19,34 +19,48 @@ import LoginButton from '@/components/ui/MenuButton';
 import LoginEnter from '@/components/ui/LoginEnter';
 import MenuBlur from '@/components/ui/MenuBlur';
 import DescPar from '@/components/ui/DescPar';
+import Floatshapes from '@/components/ui/Floatshapes';
+import runner from '../public/running.jpg'
+import Spline from '@splinetool/react-spline';
 
 const inter = Inter({subsets: ["latin"]});
-const description = ['AI powered health metrics from your wearable devices','Any metric', 'Any device.']
+const description = ['AI powered health metrics from your wearable devices.','Any metric.', ' Any device.']
+const Enter1 = ['DESIGN',' YOUR']
+const Enter2 = ['FITNESS']
+const Enter3 = ['JOURNEY']
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
   
   return (
-    <main className='relative h-full w-full bg-zinc-900'>
-      <MenuBlur isActive={isActive} setIsActive={setIsActive}/>
-      <section className = 'relative h-[60vh]'>
-
-        <div className='absolute top-1/3 right-9 z-50'>
+    <main className='relative h-full w-full '>
+      <MenuBlur isActive={isActive} setIsActive={setIsActive}/> 
+      <section className = 'relative h-[120vh] bg-zinc-900'>
+        <div className='absolute top-0 left-0 w-full h-[120vh]'>
+          <Spline scene="https://prod.spline.design/Rj-oDXVrrLquAAoy/scene.splinecode" />
+        </div>
+        <div className='absolute top-[28%] right-9 z-50'>
           <Menu isActive={isActive} setIsActive={setIsActive}/>
         </div>
-        <div className='relative ml-36 top-[30%]'>
-          <SubParagraph value={'DESIGN YOUR FITNESS JOURNEY'} fontSize={500}/>
-          <div className='relative top-[32%] left-0'>
-            <DescPar description={description}/>
-          </div>
-          <div className='relative top-[45%] left-0'>
-            <LoginEnter action={"LOGIN"}/>
-          </div>
-          <div className='relative top-[45%] left-44'>
-            <LoginEnter action={"SIGN UP"}/>
-          </div>
+        <div className='relative ml-32 w-full top-[17%] flex flex-col items-left justify-left'>
+          <DescPar description={Enter1} fontSize={1} marginView={"-26%"}/>
+          <DescPar description={Enter2} fontSize={1} marginView={"-26%"}/>
+          <DescPar description={Enter3} fontSize={1} marginView={"-26%"}/>
         </div>
+        <div className='relative ml-32 top-[17%] w-full flex justify-left items-left flex-col space-y-6'>
+          <div className='relative left-0 '>
+            <DescPar description={description} fontSize={2} marginView={"-26%"}/>
+          </div>
+          <div className='relative left-0 flex space-x-5'>
+            <LoginEnter action={"LOGIN"} buttonSize={"small"}/>
+            <LoginEnter action={"GET STARTED"} buttonSize={"large"}/>
+          </div>
+        </div> 
       </section>
-        
+      <section className='relative h-[100vh] bg-zinc-900'>
+        <div className='relative top-[60px] w-full flex flex-col justify-center items-center '>
+          <DescPar description={['Connect', 'with', 'your', ]} fontSize={2} marginView={"-20%"}/>
+        </div>
+      </section> 
       <ParallaxScroll/>
       <section id='intro' className='bg-zinc-900 relative'>
         <LocoScroll/>

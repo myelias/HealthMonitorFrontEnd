@@ -10,7 +10,8 @@ export default function Menu({isActive, setIsActive}) {
             height: "650px", 
             top: "-25px",
             right: "-25px",
-            transition: { duration: 0.50, type: "tween", ease: [0.76, 0, 0.24, 1]}
+            transition: { duration: 0.50, type: "tween", ease: [0.76, 0, 0.24, 1]},
+            className: 'text-white'
     
         },
     
@@ -27,11 +28,12 @@ export default function Menu({isActive, setIsActive}) {
 
     return (
         
-        <div className='fixed top-14 right-12 flex items-center justify-center'>
+        <div className='fixed top-14 right-12 flex  items-center justify-center'>
              <motion.div 
-                className=' bg-gradient-to-br from-[#693fe6] to-[#A356F6] rounded-3xl relative'
+             
+                className=' bg-gradient-to-br from-[#693fe6] to-[#983dfa] rounded-3xl relative'
                 variants={menu}
-                animate={isActive ? "open" : "closed"}
+                animate={isActive ? menu["open"] : menu["closed"]}
                 initial="closed"
             >
             </motion.div>

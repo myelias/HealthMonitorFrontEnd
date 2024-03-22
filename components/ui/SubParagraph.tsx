@@ -36,7 +36,7 @@ export default function SubParagraph({value, fontSize}) {
         const opacity = useTransform(progress, range, [0,1])
         return (
           <span>     
-            <span className='absolute opacity-0'>{children}</span>   
+            <span className='absolute opacity-[0.25]'>{children}</span>   
             <motion.span style={{opacity: opacity}}>{children}</motion.span>  
           </span>   
         )
@@ -48,7 +48,7 @@ export default function SubParagraph({value, fontSize}) {
   const fontVariant =
     {
         50: 'text-xl text-white flex flex-wrap font-medium max-w-[1200px]',
-        500: 'text-9xl text-white flex flex-wrap font-medium max-w-[1200px]'
+        500: 'text-9xl text-white flex flex-wrap font-medium'
     }
     
 
