@@ -10,18 +10,14 @@ import Reac, { useState } from 'react';
 import Carousel from '@/components/ui/Carousel';
 import HeartChartEx from '@/components/ui/HeartChartEx';
 import LocoScroll from '@/components/ui/LocoScroll';
-import Landing from '@/components/ui/Landing';
-import MenuButton from '@/components/ui/MenuButton';
 import Menu from '@/components/ui/Menu';
-import NavMenu from '@/components/ui/NavMenu';
-import Cursor from '@/components/ui/Cursor';
-import LoginButton from '@/components/ui/MenuButton';
 import LoginEnter from '@/components/ui/LoginEnter';
 import MenuBlur from '@/components/ui/MenuBlur';
 import DescPar from '@/components/ui/DescPar';
 import Floatshapes from '@/components/ui/Floatshapes';
 import runner from '../public/running.jpg'
 import Spline from '@splinetool/react-spline';
+import ChartCard from '@/components/ui/ChartCard';
 
 const inter = Inter({subsets: ["latin"]});
 const description = ['AI powered health metrics from your wearable devices.','Any metric.', ' Any device.']
@@ -35,64 +31,41 @@ export default function Home() {
     <main className='relative h-full w-full '>
       <MenuBlur isActive={isActive} setIsActive={setIsActive}/> 
       <section className = 'relative h-[120vh] bg-zinc-900'>
-        <div className='absolute top-0 left-0 w-full h-[120vh]'>
+        <div className='absolute top-0 left-0 w-full h-[120vh] pointer-events-none'>
           <Spline scene="https://prod.spline.design/Rj-oDXVrrLquAAoy/scene.splinecode" />
         </div>
         <div className='absolute top-[28%] right-9 z-50'>
           <Menu isActive={isActive} setIsActive={setIsActive}/>
         </div>
-        <div className='relative ml-32 w-full top-[17%] flex flex-col items-left justify-left'>
+        <div className='relative w-full top-[17%] flex flex-col items-left justify-left'>
+          <div className='relative ml-32'>
           <DescPar description={Enter1} fontSize={1} marginView={"-26%"}/>
           <DescPar description={Enter2} fontSize={1} marginView={"-26%"}/>
           <DescPar description={Enter3} fontSize={1} marginView={"-26%"}/>
+          </div>
         </div>
-        <div className='relative ml-32 top-[17%] w-full flex justify-left items-left flex-col space-y-6'>
-          <div className='relative left-0 '>
-            <DescPar description={description} fontSize={2} marginView={"-26%"}/>
-          </div>
-          <div className='relative left-0 flex space-x-5'>
-            <LoginEnter action={"LOGIN"} buttonSize={"small"}/>
-            <LoginEnter action={"GET STARTED"} buttonSize={"large"}/>
-          </div>
-        </div> 
+        <div className='relative top-[17%] w-full '>
+          <div className='relative ml-32  flex justify-left items-left flex-col space-y-6'>
+            <div className='relative left-0 '>
+              <DescPar description={description} fontSize={2} marginView={"-26%"}/>
+            </div>
+            <div className='relative left-0 flex space-x-5'>
+              <LoginEnter action={"LOGIN"} buttonSize={"small"}/>
+              <LoginEnter action={"GET STARTED"} buttonSize={"large"}/>
+            </div>
+          </div> 
+        </div>
       </section>
       <section className='relative h-[100vh] bg-zinc-900'>
-        <div className='relative top-[60px] w-full flex flex-col justify-center items-center '>
-          <DescPar description={['Connect', 'with', 'your', ]} fontSize={2} marginView={"-20%"}/>
-        </div>
+        {/* <div className='relative top-[60px] w-full flex flex-col justify-center items-center '>
+          <DescPar description={['Connect', 'with', 'your', ]} fontSize={2} marginView={"-10%"}/>
+          <ChartCard/>
+        </div> */}
       </section> 
-      <ParallaxScroll/>
+      {/* <ParallaxScroll/>
       <section id='intro' className='bg-zinc-900 relative'>
         <LocoScroll/>
-      </section> 
-        {/*<div className = 'absolute left-0 top-0 ml-32 mt-20 w-1/3 h-5/6'>
-          <h1 className='relative text-8xl text-slate-300 font-bold'> Take charge of your health.</h1>
-          <SubParagraph value = {paragraph}/>
-        </div>
-        <div className='absolute top-0 left-1/2 w-1/2'>
-          <div className='box-content h-screen w-full absolute rounded-xl z-10 bg-gradient-to-t from-black to-transparent'></div>
-          <div className='box-content h-screen w-1/2 absolute rounded-xl z-10 bg-gradient-to-r from-black to-transparent'></div>
-          <div className='absolute top-0'>
-            <Image
-                src={track}
-                alt="track"
-                className='rounded-xl h-screen'
-            />
-          </div>
-        </div>
-        <div id = "intro" className='relative h-[140vh] bg-black m-0'>
-          <LocoScroll/>
-          <Description/>
-        </div>
-        {/*
-        <section className='relative w-full h-full items-center flex justify-center bg-black h-100vh'>
-          <ParallaxScroll/>
-          <div className="absolute h-[30vh] rounded-lg bg-black">
-            <HeartChartEx/>
-          </div>
-        </section>*/}
-     
-
+      </section>  */}
       {/*<Head>
          Head tag contains metadata, which means the information in the Head tag is NOT DISPLAYED on the page but is used by browsers and search engines
         </Head>*/}
