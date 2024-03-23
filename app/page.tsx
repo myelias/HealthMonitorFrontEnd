@@ -17,7 +17,7 @@ import DescPar from '@/components/ui/DescPar';
 import Floatshapes from '@/components/ui/Floatshapes';
 import runner from '../public/running.jpg'
 import Spline from '@splinetool/react-spline';
-import ChartCard from '@/components/ui/ChartCard';
+// import ChartCard from '@/components/ui/ChartCard';
 
 const inter = Inter({subsets: ["latin"]});
 const description = ['AI powered health metrics from your wearable devices.','Any metric.', ' Any device.']
