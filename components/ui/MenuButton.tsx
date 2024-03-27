@@ -21,7 +21,7 @@ return(
                 onClick={() => {toggleMenu()}}
             >
                 <PerspectiveText label="Close" />
-            </div>
+            </div> 
         </motion.div>
     </div>
 )
@@ -30,9 +30,9 @@ return(
 
 function PerspectiveText({label}) {
     return (    
-        <div className='flex flex-col justify-center items-center h-full w-full transition-transform group'>
-            <p className=' transition-all text-zinc-900 font-bold '>{label}</p> 
-            {/* <p className=' absolute top-full text-zinc-900 font-bold'>{label}</p> */}
+        <div className='relative overflow-hidden rounded-3xl h-full w-full group'>
+            <motion.p className=' relative rounded-2xl h-full w-full flex flex-col justify-center items-center transition-all text-gray-200 group-hover:-translate-y-full group-hover:scale-90 duration-500'>{label}</motion.p> 
+            <motion.p className=' relative rounded-2xl h-full w-full flex flex-col justify-center items-center top-full transition-all text-gray-200 group-hover:-translate-y-[200%] duration-500'>{label}</motion.p>
         </div>
     )
 }

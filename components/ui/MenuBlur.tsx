@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 
 export default function MenuBlur({isActive, setIsActive}) {
@@ -18,13 +18,15 @@ export default function MenuBlur({isActive, setIsActive}) {
     }  
 
   return (
-    <motion.div
-                className='fixed top-0 left-0 w-full h-full backdrop-brightness-50'
-                variants={blur}
-                animate={isActive ? "open" : "closed"}
-                initial="closed"
-            >
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+                  className='fixed top-0 left-0 w-full h-full backdrop-brightness-50'
+                  variants={blur}
+                  animate={isActive ? "open" : "closed"}
+                  initial="closed"
+              >
+      </motion.div>
+    </AnimatePresence>
   )
 }
 

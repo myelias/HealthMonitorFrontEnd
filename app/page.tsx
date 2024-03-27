@@ -50,8 +50,8 @@ export default function Home() {
               <DescPar description={description} fontSize={2} marginView={"-26%"}/>
             </div>
             <div className='relative left-0 flex space-x-5'>
-              <LoginEnter action={"LOGIN"} buttonSize={"small"}/>
-              <LoginEnter action={"GET STARTED"} buttonSize={"large"}/>
+              <LoginEnter action={"LOGIN"} buttonSize={"small"} marginSize={'-15%'}/>
+              <LoginEnter action={"GET STARTED"} buttonSize={"large"} marginSize={'-23%'}/>
             </div>
           </div> 
         </div>
