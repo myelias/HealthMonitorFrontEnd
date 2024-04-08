@@ -7,16 +7,17 @@ import Head from 'next/head';
 import canyon from '../public/canyon.jpg'
 import { motion } from "framer-motion"
 import Reac, { useState } from 'react';
-import Carousel from '@/components/ui/Carousel';
+import Carousel from '@/components/ui/LogoCarousel/Carousel';
 import HeartChartEx from '@/components/ui/HeartChartEx';
 import LocoScroll from '@/components/ui/LocoScroll';
 import Menu from '@/components/ui/Menu';
 import LoginEnter from '@/components/ui/LoginEnter';
 import MenuBlur from '@/components/ui/MenuBlur';
 import DescPar from '@/components/ui/DescPar';
-import Floatshapes from '@/components/ui/Floatshapes';
 import runner from '../public/running.jpg'
 import Spline from '@splinetool/react-spline';
+import Demo from '@/components/ui/Demo';
+import Landing from '@/components/ui/Landing';
 // import ChartCard from '@/components/ui/ChartCard';
 
 const inter = Inter({subsets: ["latin"]});
@@ -24,6 +25,8 @@ const description = ['AI powered health metrics from your wearable devices.','An
 const Enter1 = ['DESIGN',' YOUR']
 const Enter2 = ['FITNESS']
 const Enter3 = ['JOURNEY']
+const description2 = "Analyze your fitness and health metrics with Fittmeo"
+const description3 = "Simply sync with your favorite apps and plan your journey. Seamlessly."
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
   
@@ -47,7 +50,7 @@ export default function Home() {
         <div className='relative top-[17%] w-full '>
           <div className='relative ml-32  flex justify-left items-left flex-col space-y-6'>
             <div className='relative left-0 '>
-              <DescPar description={description} fontSize={2} marginView={"-26%"}/>
+              <DescPar description={description} fontSize={3} marginView={"-26%"}/>
             </div>
             <div className='relative left-0 flex space-x-5'>
               <LoginEnter action={"LOGIN"} buttonSize={"small"} marginSize={'-15%'}/>
@@ -56,16 +59,16 @@ export default function Home() {
           </div> 
         </div>
       </section>
-      <section className='relative h-[100vh] bg-zinc-900'>
-        {/* <div className='relative top-[60px] w-full flex flex-col justify-center items-center '>
-          <DescPar description={['Connect', 'with', 'your', ]} fontSize={2} marginView={"-10%"}/>
-          <ChartCard/>
-        </div> */}
+      <section className='relative h-[150vh] bg-zinc-900'>
+        <div className='relative top-16 flex flex-col justify-center items-center p-24'>
+          <p className='relative w-1/2 text-5xl text-white text-center font-medium'>{description2}</p>
+          <SubParagraph value ={description3} fontSize={500}/>
+        </div>
+        <div className='relative top-32'>
+          <Carousel/>
+        </div>
       </section> 
-      {/* <ParallaxScroll/>
-      <section id='intro' className='bg-zinc-900 relative'>
-        <LocoScroll/>
-      </section>  */}
+
       {/*<Head>
          Head tag contains metadata, which means the information in the Head tag is NOT DISPLAYED on the page but is used by browsers and search engines
         </Head>*/}

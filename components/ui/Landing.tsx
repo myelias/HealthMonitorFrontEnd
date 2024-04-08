@@ -5,7 +5,8 @@ import canyon from '../../public/canyon.jpg'
 import Image from 'next/image'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
-
+import fitbitlogo from '../../public/Fitbit_Logo_White_RGB.png'
+import garminlogo from '../../public/Garmin_Logo With_Delta-white-low-res.png'
 
 export default function Landing() {
 
@@ -55,11 +56,15 @@ export default function Landing() {
 
   return (
 
-    <div className ='relative overflow-hidden h-[20vh] ml-[71px] mr-[71px]'> 
+    <div className ='relative overflow-hidden h-[40vh] ml-[71px] mr-[71px]'> 
       <div className='absolute top-20'>
         <div ref={slider} className='relative whitespace-nowrap'>
-          <p ref={firstText} className='relative m-0 text-white text-9xl pr-12 font-bold'>{phrase}</p>
-          <p ref={secondText} className='absolute left-full top-0 text-white text-9xl pr-12 font-bold'>{phrase}</p>
+          <div ref={firstText} className='relative m-0 text-white text-9xl pr-12 font-bold'>
+            <Image src={fitbitlogo} alt={'fitbit'} width={400} height={400}/>
+          </div>
+          <div ref={secondText} className='absolute left-full top-0 text-white text-9xl pr-12 font-bold'>
+            <Image src={fitbitlogo} alt={'fitbit'} width={400} height={400}/>
+          </div>
         </div>
       </div>
     

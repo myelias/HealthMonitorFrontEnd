@@ -2,12 +2,12 @@
 import React, {useEffect, useRef} from 'react'
 import { useScroll, motion, useTransform, useTime } from 'framer-motion'
 
+export default function SubParagraph({value, fontSize}) { 
 
-export default function SubParagraph({value, fontSize}) {
     const ref = useRef(null);
     const {scrollYProgress} = useScroll({
         target: ref,
-        offset: ["start 0.4", "start 0.25"],
+        offset: ["end 0.9", "start 0.3"], //"start 0.4", "start 0.25"
     });
     const time = useTime();
     const rotate = useTransform(
@@ -20,7 +20,7 @@ export default function SubParagraph({value, fontSize}) {
         const amount = range[1] - range[0]
         const step = amount / children.length
         return (
-          <span className='relative mr-3 mt-3'>
+          <span className='relative mr-1 mt-3 '>
             {
               children.split("").map((char, i) => {
                 const start = range[0] + (i * step);
@@ -36,7 +36,7 @@ export default function SubParagraph({value, fontSize}) {
         const opacity = useTransform(progress, range, [0,1])
         return (
           <span>     
-            <span className='absolute opacity-[0.25]'>{children}</span>   
+            <span className='absolute opacity-[0.25] text-gray-300'>{children}</span>   
             <motion.span style={{opacity: opacity}}>{children}</motion.span>  
           </span>   
         )
@@ -48,7 +48,7 @@ export default function SubParagraph({value, fontSize}) {
   const fontVariant =
     {
         50: 'text-xl text-white flex flex-wrap font-medium max-w-[1200px]',
-        500: 'text-9xl text-white flex flex-wrap font-medium'
+        500: 'flex justify-center align-center w-1/2 relative text-xl font-thin text-[#983dfa]'
     }
     
 
@@ -61,12 +61,10 @@ export default function SubParagraph({value, fontSize}) {
                 splitParagraph.map((word, index) => {
                     const start = index / splitParagraph.length;
                     const end = start + (1 / (splitParagraph.length));
-                    return <Word key={index} range={[start,end]} progress = {rotate}>{word}</Word>
+                    return <Word key={index} range={[start,end]} progress = {scrollYProgress}>{word}</Word>
                 })
-
             }
         </p>
     )
 }
-
 
